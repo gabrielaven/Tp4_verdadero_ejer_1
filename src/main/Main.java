@@ -1,3 +1,4 @@
+package main;
 import database.JdbcRegistroParticipantes;
 import model.Participantes;
 import ui.AgregarParticipante;
