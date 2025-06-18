@@ -8,8 +8,8 @@ public class EnviarEmailObserver implements Observador {
 
     @Override
     public void notificar(Participante p) {
-        String asunto = "Gracias por registrarte";
-        String cuerpo = "Hola " + p.nombre() + ", te registraste exitosamente en el concurso.";
+        String asunto = "Gracias por inscribirte";
+        String cuerpo = "Hola " + p.nombre() + ", tu inscripcion fue existosa";
         servicio.enviar(p.email(), asunto, cuerpo);
     }
 }
