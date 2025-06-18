@@ -15,6 +15,7 @@ public class AgregarParticipante extends JFrame {
     private JTextField nombre;
     private JTextField telefono;
     private JTextField region;
+    private JTextField email;
     private Participantes listaParticipantes;
 
     public AgregarParticipante(Participantes participantes) throws SQLException {
@@ -33,7 +34,13 @@ public class AgregarParticipante extends JFrame {
         this.nombre.setText("");
         this.telefono.setText("");
         this.region.setText("China");
+        this.email = new JTextField(10);
+        this.email.setText("");
+
+        
         JPanel contentPane = new JPanel();
+        contentPane.add(new JLabel("Email: "));
+        contentPane.add(email);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new FlowLayout());
         contentPane.add(new JLabel("Nombre: "));
@@ -61,7 +68,7 @@ public class AgregarParticipante extends JFrame {
 
     private void onBotonCargar() throws SQLException {
         try {
-            this.listaParticipantes.nuevoParticipante(nombre.getText(), telefono.getText(), region.getText());
+            this.listaParticipantes.nuevoParticipante(nombre.getText(), telefono.getText(), region.getText(), email.getText());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             return;
